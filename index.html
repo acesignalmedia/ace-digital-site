@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ace signal media — built to book.</title>
+<meta name="description" content="The website + ads + AI search agency for local small businesses. We rebuild your site, shoot your content, run your ads, and get you found on Google and AI." />
+<!-- Leadsy / vtag AI website visitor pixel -->
+<script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="1Dq2SYJ3XK5FTLIPT" data-version="062024"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* ---------- Reset & base ---------- */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #FFFFFF;
+    background: #000000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; transition: color .2s, opacity .2s; }
+  button, .btn { font-family: inherit; cursor: pointer; }
+
+  :root {
+    --bg: #050507;
+    --bg-1: #0E0E10;
+    --bg-2: #18181B;
+    --bg-3: #222226;
+    --bg-section: #0A0A0C;
+    --text: #FFFFFF;
+    --text-muted: #9C9CA3;
+    --text-dim: #5E5E66;
+    --border: rgba(255,255,255,0.07);
+    --border-2: rgba(255,255,255,0.16);
+    --accent: #7DD3FC;
+    --accent-dim: #38B5E8;
+    --accent-warm: #FFB88A;
+    --max: 1320px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+    color: var(--text);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin: 0 0 .5em;
+  }
+  h1 { font-size: clamp(3.5rem, 9vw, 7.5rem); }
+  h2 { font-size: clamp(2.4rem, 5.5vw, 4.5rem); }
+  h3 { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; letter-spacing: -0.02em; }
+  h4 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.015em; }
+  p  { margin: 0 0 1em; }
+
+  ::selection { background: var(--accent); color: #000; }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: .65rem;
+    padding: .65rem 1.2rem;
+    border-radius: 999px;
+    background: var(--bg-2);
+    color: var(--text);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    margin: 0 0 2rem;
+    border: 1px solid var(--border);
+  }
+  .pill .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px rgba(125,211,252,0.6);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.85); }
+  }
+  .lede {
+    font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+    color: var(--text-muted);
+    line-height: 1.55;
+    font-weight: 400;
+    max-width: 60ch;
+  }
+  .muted { color: var(--text-muted); }
+  .accent-text { color: var(--accent); }
+
+  .container { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+  section { padding: 7rem 0; position: relative; }
+  @media (max-width: 720px) { section { padding: 4.5rem 0; } }
+
+  .section-alt { background: var(--bg-section); }
+  .section-alt + section:not(.section-alt) { border-top: 1px solid var(--border); }
+  section:not(.section-alt) + .section-alt { border-top: 1px solid var(--border); }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .65rem;
+    padding: 1.05rem 1.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid transparent;
+    transition: transform .15s ease, background .2s, color .2s, border-color .2s, box-shadow .25s;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+    position: relative;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #0A0A0C;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 0 rgba(125,211,252,0);
+  }
+  .btn-primary:hover {
+    background: #A5DFFE;
+    border-color: #A5DFFE;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 30px -8px rgba(125,211,252,0.55);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border-2);
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); background: rgba(125,211,252,0.04); }
+  .btn-arrow::after {
+    content: "→";
+    display: inline-block;
+    transition: transform .2s;
+  }
+  .btn-arrow:hover::after { transform: translateX(3px); }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(5,5,7,0.72);
+    backdrop-filter: saturate(180%) blur(16px);
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
+    border-bottom: 1px solid var(--border);
+    transition: background .25s, border-color .25s;
+  }
+  .nav-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: .7rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    transition: transform .25s;
+  }
+  .brand:hover { transform: translateX(2px); }
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid var(--text);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    color: var(--text);
+    line-height: 1;
+    position: relative;
+    transition: border-color .25s, box-shadow .25s;
+  }
+  .brand:hover .brand-mark {
+    border-color: var(--accent);
+    box-shadow: 0 0 24px -4px rgba(125,211,252,0.5);
+    color: var(--accent);
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    font-size: .98rem;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+  .nav-links a:not(.nav-cta) { position: relative; }
+  .nav-links a:not(.nav-cta)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1.5px;
+    background: var(--accent);
+    transition: width .25s ease;
+  }
+  .nav-links a:not(.nav-cta):hover { color: var(--text); }
+  .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+  .nav-cta { font-size: .9rem; padding: .65rem 1.25rem; }
+  @media (max-width: 880px) {
+    .nav-links a:not(.nav-cta) { display: none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 9rem 0 8rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -220px;
+    right: -180px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(125,211,252,0.12), transparent 65%);
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(20px);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -250px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,184,138,0.09), transparent 65%);
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(20px);
+  }
+  .hero > .container { position: relative; z-index: 1; }
+  .hero h1 { max-width: 14ch; }
+  .hero h1 .punch { color: var(--accent); }
+  .hero .lede { margin-top: 1.8rem; }
+  .hero-actions { margin-top: 3rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-meta {
+    margin-top: 5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    color: var(--text-muted);
+    font-size: .95rem;
+  }
+  @media (max-width: 720px) { .hero-meta { grid-template-columns: 1fr; gap: 1rem; } }
+  .hero-meta strong { color: var(--text); font-weight: 600; display: block; margin-bottom: .25rem; font-size: 1.05rem; letter-spacing: -0.01em; }
+  .hero-meta .label { color: var(--accent); font-weight: 600; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; display: block; margin-bottom: .4rem; }
+
+  /* ---------- Trust strip ---------- */
+  .trust {
+    padding: 3rem 0;
+    background: var(--bg-section);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .trust-label {
+    margin: 0 0 1.5rem;
+    color: var(--text-dim);
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .22em;
+    font-weight: 700;
+    text-align: center;
+  }
+  .trust-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem 1.25rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+  .trust-tags span {
+    padding: .5rem 1.1rem;
+    border: 1px solid var(--border-2);
+    border-radius: 999px;
+    color: var(--text-muted);
+    transition: color .25s, border-color .25s, background .25s, transform .2s;
+  }
+  .trust-tags span:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(125,211,252,0.06);
+    transform: translateY(-2px);
+  }
+
+  /* ---------- Section header (shared) ---------- */
+  .section-head { margin-bottom: 4rem; max-width: 65ch; }
+
+  /* ---------- Problem section ---------- */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  @media (max-width: 880px) { .problem-grid { grid-template-columns: 1fr; } }
+  .problem-card {
+    padding: 2.5rem;
+    background: var(--bg-1);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    transition: border-color .25s, background .25s, transform .25s;
+  }
+  .problem-card:hover {
+    border-color: rgba(125,211,252,0.35);
+    background: #121214;
+    transform: translateY(-3px);
+  }
+  .problem-card .num {
+    font-weight: 800;
+    color: var(--accent);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    font-feature-settings: "tnum";
+    letter-spacing: -0.01em;
+  }
+  .problem-card h3 { margin-bottom: 1rem; }
+  .problem-card p { color: var(--text-muted); margin: 0; }
+
+  /* ---------- Services ---------- */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  @media (max-width: 880px) { .services-grid { grid-template-columns: 1fr; } }
+  .service {
+    padding: 2.75rem;
+    background: var(--bg-1);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    transition: border-color .25s, background .25s, transform .25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px; right: -1px; bottom: -1px;
+    background: radial-gradient(circle at var(--mx, 50%) var(--my, 0%), rgba(125,211,252,0.08), transparent 40%);
+    opacity: 0;
+    transition: opacity .35s;
+    pointer-events: none;
+    border-radius: 20px;
+  }
+  .service:hover { border-color: rgba(125,211,252,0.25); transform: translateY(-3px); }
+  .service:hover::before { opacity: 1; }
+  .service > * { position: relative; z-index: 1; }
+  .service-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .service-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: .9rem;
+    font-feature-settings: "tnum";
+    flex-shrink: 0;
+    background: rgba(125,211,252,0.04);
+  }
+  .service h3 { margin: 0; }
+  .service p { color: var(--text-muted); margin: 0 0 1.5rem; }
+  .service ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-top: 1px solid var(--border);
+    padding-top: 1.25rem;
+  }
+  .service li {
+    color: var(--text);
+    font-size: .95rem;
+    padding: .55rem 0 .55rem 1.85rem;
+    position: relative;
+  }
+  .service li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.1rem;
+    width: 14px;
+    height: 1.5px;
+    background: var(--accent);
+  }
+
+  /* ---------- Process ---------- */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+  @media (max-width: 880px) { .process-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 540px) { .process-grid { grid-template-columns: 1fr; } }
+  .step {
+    padding: 2.25rem;
+    background: var(--bg-1);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    transition: border-color .25s, background .25s, transform .25s;
+  }
+  .step:hover {
+    border-color: rgba(125,211,252,0.25);
+    background: #121214;
+    transform: translateY(-3px);
+  }
+  .step-num {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.04em;
+    font-feature-settings: "tnum";
+    line-height: 1;
+  }
+  .step h3 { margin: 0 0 .6rem; }
+  .step p { color: var(--text-muted); font-size: .95rem; margin: 0; }
+
+  /* ---------- Work / industries ---------- */
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  @media (max-width: 880px) { .industries-grid { grid-template-columns: 1fr; } }
+  .industry {
+    padding: 2.75rem;
+    background: var(--bg-1);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    transition: border-color .25s, background .25s, transform .25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .industry:hover {
+    border-color: rgba(125,211,252,0.25);
+    background: #121214;
+    transform: translateY(-3px);
+  }
+  .industry .tag {
+    font-size: .7rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  .industry h3 { margin-bottom: 1rem; }
+  .industry p { color: var(--text-muted); margin: 0; }
+
+  /* ---------- Reels / portfolio video ---------- */
+  .reels-subhead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 0 0 2rem;
+  }
+  .reels-subhead h3 { margin: 0; }
+  .reels-subhead p { color: var(--text-muted); margin: 0; font-size: .98rem; }
+  .reels-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 4rem;
+  }
+  .reel {
+    flex: 0 1 calc((100% - 2 * 1.25rem) / 3);
+    background: var(--bg-1);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: border-color .25s, transform .25s, box-shadow .25s;
+  }
+  @media (max-width: 880px) { .reel { flex-basis: calc((100% - 1.25rem) / 2); } }
+  @media (max-width: 540px) { .reel { flex-basis: 100%; max-width: 360px; } }
+  .reel:hover {
+    border-color: rgba(125,211,252,0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 50px -20px rgba(0,0,0,0.7);
+  }
+  .reel-frame {
+    position: relative;
+    aspect-ratio: 9 / 16;
+    background: #060608;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .reel-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: #060608;
+  }
+  .reel-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-dim);
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .reel-placeholder .play {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color .25s, color .25s;
+  }
+  .reel:hover .reel-placeholder .play { border-color: var(--accent); color: var(--accent); }
+  .reel-placeholder .play svg { width: 22px; height: 22px; fill: currentColor; margin-left: 3px; }
+  .reel-placeholder span { font-size: .82rem; letter-spacing: .04em; }
+  .reel-meta { padding: 1.15rem 1.25rem 1.35rem; }
+  .reel-meta h4 { margin: 0; font-size: 1rem; font-weight: 700; }
+  .reel-meta p { margin: .3rem 0 0; color: var(--text-muted); font-size: .85rem; }
+
+  /* ---------- Pricing / Approach ---------- */
+  #pricing {
+    position: relative;
+    overflow: hidden;
+  }
+  #pricing::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -200px;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,184,138,0.08), transparent 65%);
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(20px);
+  }
+  #pricing > .container { position: relative; z-index: 1; }
+  .pricing-wrap {
+    background: linear-gradient(135deg, var(--bg-1), #0C0C10 60%, #0B0E0B);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 3.5rem;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  @media (max-width: 880px) {
+    .pricing-wrap { grid-template-columns: 1fr; padding: 2.25rem; gap: 2.5rem; }
+  }
+  .pricing-wrap h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 1rem; }
+  .pricing-wrap p { color: var(--text-muted); margin-bottom: 1rem; }
+  .pricing-promises {
+    list-style: none;
+    padding: 0;
+    margin: 1.75rem 0 0;
+  }
+  .pricing-promises li {
+    padding: .9rem 0 .9rem 1.85rem;
+    position: relative;
+    font-size: .98rem;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+  }
+  .pricing-promises li:last-child { border-bottom: 0; }
+  .pricing-promises li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.45rem;
+    width: 14px;
+    height: 1.5px;
+    background: var(--accent);
+  }
+  .pricing-cta {
+    background: var(--bg-2);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-2);
+    position: relative;
+    overflow: hidden;
+  }
+  .pricing-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(125,211,252,0.06), transparent 50%);
+    pointer-events: none;
+  }
+  .pricing-cta > * { position: relative; }
+  .pricing-cta .label {
+    font-size: .72rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .pricing-cta h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  .pricing-cta p { color: var(--text-muted); font-size: .95rem; margin-bottom: 1.75rem; }
+
+  /* ---------- About ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  @media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+  .about-avatar-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+  }
+  .about-avatar-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -30px;
+    background: radial-gradient(circle, rgba(125,211,252,0.16), transparent 60%);
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(20px);
+    z-index: 0;
+  }
+  .about-avatar {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 1;
+    background: var(--bg-1);
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 7rem;
+    line-height: 1;
+  }
+  .about-content p { color: var(--text-muted); }
+  .about-content strong { color: var(--text); }
+  .about-signature {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-list { max-width: 900px; margin: 0; }
+  details {
+    background: var(--bg-1);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: .75rem;
+    overflow: hidden;
+    transition: border-color .25s, background .25s;
+  }
+  details:hover { border-color: var(--border-2); }
+  details[open] { background: #121214; border-color: rgba(125,211,252,0.25); }
+  summary {
+    padding: 1.6rem 1.8rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    gap: 1.5rem;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform .25s, color .25s;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  details:hover summary::after { color: var(--accent); }
+  details[open] summary::after { content: "−"; color: var(--accent); }
+  .faq-answer {
+    padding: 0 1.8rem 1.6rem;
+    color: var(--text-muted);
+    max-width: 70ch;
+  }
+  .faq-answer p { margin: 0; }
+
+  /* ---------- Closing CTA ---------- */
+  .cta-section {
+    padding: 9rem 0;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    background: radial-gradient(ellipse 70% 60% at 50% 30%, rgba(125,211,252,0.10), transparent 60%);
+    pointer-events: none;
+  }
+  .cta-section > .container { position: relative; z-index: 1; }
+  .cta-section h2 { max-width: 18ch; }
+  .cta-section h2 .accent { color: var(--accent); }
+  .cta-section .lede { margin: 1.8rem 0 3rem; }
+  .cta-section .btn-primary { font-size: 1.1rem; padding: 1.2rem 2.2rem; }
+  .cta-meta {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: .95rem;
+  }
+  .cta-meta a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(125,211,252,0.4);
+    text-underline-offset: 4px;
+    transition: text-decoration-color .2s;
+  }
+  .cta-meta a:hover { text-decoration-color: var(--accent); }
+
+  /* ---------- Footer ---------- */
+  .footer {
+    color: var(--text-dim);
+    padding: 3rem 0 2.5rem;
+    font-size: .92rem;
+    border-top: 1px solid var(--border);
+  }
+  .footer-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .footer .brand { color: var(--text); }
+  .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: .82rem;
+    color: var(--text-dim);
+  }
+
+  /* ---------- Scroll animations ---------- */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .8s cubic-bezier(.16,.84,.44,1), transform .8s cubic-bezier(.16,.84,.44,1);
+    will-change: opacity, transform;
+  }
+  .fade-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .stagger > * { transition-delay: 0ms; }
+  .stagger.in-view > *:nth-child(1) { transition-delay: 0ms; }
+  .stagger.in-view > *:nth-child(2) { transition-delay: 90ms; }
+  .stagger.in-view > *:nth-child(3) { transition-delay: 180ms; }
+  .stagger.in-view > *:nth-child(4) { transition-delay: 270ms; }
+  .stagger.in-view > *:nth-child(5) { transition-delay: 360ms; }
+  .stagger.in-view > *:nth-child(6) { transition-delay: 450ms; }
+  .stagger.in-view > *:nth-child(7) { transition-delay: 540ms; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up { opacity: 1; transform: none; transition: none; }
+    .pill .dot { animation: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============= NAV ============= -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="ace signal media home">
+      <span class="brand-mark">a</span>
+      <span>ace signal media</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">services</a>
+      <a href="#process">process</a>
+      <a href="#work">work</a>
+      <a href="#pricing">approach</a>
+      <a href="#about">about</a>
+      <a class="btn btn-primary nav-cta" href="https://calendar.app.google/RjDqahP2hVmo7f5r6" target="_blank" rel="noopener">book a call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============= HERO ============= -->
+<header id="top" class="hero">
+  <div class="container">
+    <span class="pill fade-up"><span class="dot"></span>WEBSITE · CONTENT · ADS · AI SEARCH</span>
+    <h1 class="fade-up">Built to <span class="punch">book.</span></h1>
+    <p class="lede fade-up">
+      We rebuild local businesses end-to-end so the next visitor doesn't get away.
+      Website, content, ads, and search visibility — built to work together.
+    </p>
+    <div class="hero-actions fade-up">
+      <a class="btn btn-primary btn-arrow" href="https://calendar.app.google/RjDqahP2hVmo7f5r6" target="_blank" rel="noopener">Book a free strategy call</a>
+      <a class="btn btn-ghost" href="#services">See what we do</a>
+    </div>
+    <div class="hero-meta stagger">
+      <div class="fade-up"><span class="label">01 · FLAT MONTHLY</span><strong>Predictable rate</strong>No surprise invoices</div>
+      <div class="fade-up"><span class="label">02 · FLEXIBLE</span><strong>Bundled or à la carte</strong>Add or drop pillars anytime</div>
+      <div class="fade-up"><span class="label">03 · YOURS</span><strong>You own every asset</strong>We create for you</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============= TRUST ============= -->
+<section class="trust">
+  <div class="container">
+    <p class="trust-label fade-up">Built for the businesses people actually book</p>
+    <div class="trust-tags stagger">
+      <span class="fade-up">Restaurants &amp; cafés</span>
+      <span class="fade-up">Gyms &amp; studios</span>
+      <span class="fade-up">Barbershops &amp; salons</span>
+      <span class="fade-up">Spas &amp; wellness</span>
+      <span class="fade-up">Medical &amp; eyecare</span>
+      <span class="fade-up">Local retail</span>
+      <span class="fade-up">Service trades</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============= PROBLEM ============= -->
+<section id="problem">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="pill"><span class="dot"></span>WHY MOST LOCAL SITES LEAK REVENUE</span>
+      <h2>Your website should be your hardest-working employee.</h2>
+      <p class="lede" style="margin-top:1.5rem;">
+        Most aren't. They're slow on mobile, hide the booking or ordering button, and never get found on Google.
+        Meanwhile your back office is held together by spreadsheets and 9pm reconciliations.
+      </p>
+    </div>
+
+    <div class="problem-grid stagger">
+      <div class="problem-card fade-up">
+        <span class="num">01</span>
+        <h3>A site that fights your phone</h3>
+        <p>Slow mobile load. Buried call-to-action. Layout breaks on small screens. Visitors bounce before they ever see what you do.</p>
+      </div>
+      <div class="problem-card fade-up">
+        <span class="num">02</span>
+        <h3>Ad spend with nothing to show</h3>
+        <p>Boosting random posts. Paying agencies that don't understand your business. Running campaigns with no conversion tracking. Most local businesses waste half their ad budget — and don't even know it.</p>
+      </div>
+      <div class="problem-card fade-up">
+        <span class="num">03</span>
+        <h3>Invisible on Google AND AI</h3>
+        <p>"[Your service] near me" goes to competitors on Google. Worse: when someone asks ChatGPT or Perplexity for a recommendation in your area, your name doesn't come up. No schema, no AI optimization, no local strategy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= SERVICES ============= -->
+<section id="services" class="section-alt">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="pill"><span class="dot"></span>WHAT WE DO</span>
+      <h2>Four pillars. One integrated system.</h2>
+      <p class="lede" style="margin-top:1.5rem;">
+        We bundle the four things every local business needs to grow online so they actually work together.
+        Take all four, or pick just the one you need most.
+      </p>
+    </div>
+
+    <div class="services-grid stagger">
+      <div class="service fade-up">
+        <div class="service-head">
+          <span class="service-num">01</span>
+          <h3>New website</h3>
+        </div>
+        <p>Mobile-first rebuild on the platform that fits your business — Square, Squarespace, Webflow, WordPress, Wix. Conversion-focused architecture, refreshed copy, the action you care about front and center.</p>
+        <ul>
+          <li>Mobile, tablet, desktop optimized</li>
+          <li>Integrated booking, ordering, or contact flow</li>
+          <li>Defined revision rounds at every milestone</li>
+          <li>Cross-browser QA before launch</li>
+        </ul>
+      </div>
+      <div class="service fade-up">
+        <div class="service-head">
+          <span class="service-num">02</span>
+          <h3>Content shoot + reels</h3>
+        </div>
+        <p>On-site photo and video session at your business. Edited stills and short-form vertical reels formatted for Instagram, TikTok, and YouTube Shorts.</p>
+        <ul>
+          <li>On-site photo &amp; video shoot</li>
+          <li>Edited high-resolution photos</li>
+          <li>Short-form vertical reels</li>
+          <li>Cloud delivery, full ownership</li>
+        </ul>
+      </div>
+      <div class="service fade-up">
+        <div class="service-head">
+          <span class="service-num">03</span>
+          <h3>Targeted Meta &amp; Google ads</h3>
+        </div>
+        <p>Meta (Facebook + Instagram) and Google ad campaigns built for local lead generation. Most local businesses are wasting half their ad spend on bad targeting and lazy creative. We won't — built and managed by someone who has run local ad budgets long enough to know exactly what moves the needle.</p>
+        <ul>
+          <li>Meta + Google Search and Performance Max campaigns</li>
+          <li>Audience targeting tuned to your service area</li>
+          <li>Creative built from your shoot assets</li>
+          <li>Conversion tracking + plain-English reporting</li>
+          <li>No "boost a post and pray" — built around proven funnels</li>
+        </ul>
+      </div>
+      <div class="service fade-up">
+        <div class="service-head">
+          <span class="service-num">04</span>
+          <h3>SEO + AI search visibility</h3>
+        </div>
+        <p>Search isn't just Google anymore. We get you found in traditional Google search, on Google Maps for local intent, AND in the new AI search engines — ChatGPT, Perplexity, Google AI Overviews, Claude — so when someone asks an AI for a recommendation in your area, your name comes up first.</p>
+        <ul>
+          <li>On-page SEO across rebuilt pages</li>
+          <li>Schema markup (LocalBusiness, Service, FAQ)</li>
+          <li>Google Business Profile optimized for local search</li>
+          <li>AI search optimization (ChatGPT, Perplexity, AI Overviews)</li>
+          <li>Local keyword strategy for your service area</li>
+          <li>Baseline performance report at launch</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= PROCESS ============= -->
+<section id="process">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="pill"><span class="dot"></span>HOW WE WORK</span>
+      <h2>From kickoff to launch.</h2>
+    </div>
+
+    <div class="process-grid stagger">
+      <div class="step fade-up">
+        <span class="step-num">01</span>
+        <h3>Discover</h3>
+        <p>Kickoff call, brand brief, design direction approved, content shoot scheduled, sitemap signed off.</p>
+      </div>
+      <div class="step fade-up">
+        <span class="step-num">02</span>
+        <h3>Build</h3>
+        <p>Website built, photo &amp; video shoot, reel editing &amp; approvals, ad creative prepared.</p>
+      </div>
+      <div class="step fade-up">
+        <span class="step-num">03</span>
+        <h3>Optimize</h3>
+        <p>On-page SEO and schema completed, Google Business Profile optimized, AI search visibility configured, ad campaigns built and ready to launch.</p>
+      </div>
+      <div class="step fade-up">
+        <span class="step-num">04</span>
+        <h3>Launch</h3>
+        <p>Final QA, site goes live, ad campaigns activated, baseline performance report delivered, handoff complete.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= WORK / INDUSTRIES ============= -->
+<section id="work" class="section-alt">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="pill"><span class="dot"></span>RECENT WORK</span>
+      <h2>We work across categories.</h2>
+      <p class="lede" style="margin-top:1.5rem;">
+        If you're a local business that takes bookings, orders, or appointments, we can help you grow.
+        Recent and current projects span:
+      </p>
+    </div>
+
+    <!-- ===== REELS / PORTFOLIO VIDEO =====
+         To add a clip: drop the .mp4 into a "videos" folder next to this file,
+         then uncomment the <video> line and set its src + poster.
+         Delete or duplicate a .reel block to change how many show. -->
+    <div class="reels-subhead fade-up">
+      <h3>Made to stop the scroll.</h3>
+      <p>A few of the reels we've shot &amp; cut for local brands.</p>
+    </div>
+    <div class="reels-grid stagger">
+      <div class="reel fade-up">
+        <div class="reel-frame">
+          <video src="videos/espresso-martini.mp4" controls playsinline preload="metadata" poster="videos/espresso-martini.jpg"></video>
+        </div>
+      </div>
+      <div class="reel fade-up">
+        <div class="reel-frame">
+          <video src="videos/wrecked-ad.mp4" controls playsinline preload="metadata" poster="videos/wrecked-ad.jpg"></video>
+        </div>
+      </div>
+      <div class="reel fade-up">
+        <div class="reel-frame">
+          <video src="videos/mega-fit-meals.mp4" controls playsinline preload="metadata" poster="videos/mega-fit-meals.jpg"></video>
+        </div>
+      </div>
+      <div class="reel fade-up">
+        <div class="reel-frame">
+          <video src="videos/mikey-steel.mp4" controls playsinline preload="metadata" poster="videos/mikey-steel.jpg"></video>
+        </div>
+      </div>
+      <div class="reel fade-up">
+        <div class="reel-frame">
+          <video src="videos/wilson.mp4" controls playsinline preload="metadata" poster="videos/wilson.jpg"></video>
+        </div>
+      </div>
+      <div class="reel fade-up">
+        <div class="reel-frame">
+          <video src="videos/abe-standup.mp4" controls playsinline preload="metadata" poster="videos/abe-standup.jpg"></video>
+        </div>
+      </div>
+      <div class="reel fade-up">
+        <div class="reel-frame">
+          <video src="videos/huge-pancake.mp4" controls playsinline preload="metadata" poster="videos/huge-pancake.jpg"></video>
+        </div>
+      </div>
+      <div class="reel fade-up">
+        <div class="reel-frame">
+          <video src="videos/kasra.mp4" controls playsinline preload="metadata" poster="videos/kasra.jpg"></video>
+        </div>
+      </div>
+    </div>
+
+    <div class="industries-grid stagger">
+      <div class="industry fade-up">
+        <span class="tag">FOOD &amp; BEVERAGE</span>
+        <h3>Restaurants</h3>
+        <p>Menu-first design, online ordering front and center, hero imagery that makes people hungry. Local Meta and Google ads that pull diners off the map.</p>
+      </div>
+      <div class="industry fade-up">
+        <span class="tag">FITNESS</span>
+        <h3>Gyms &amp; studios</h3>
+        <p>Class schedules, membership sign-up flows, trial-pass funnels. Targeted Meta ads built around real member transformations.</p>
+      </div>
+      <div class="industry fade-up">
+        <span class="tag">PERSONAL SERVICES</span>
+        <h3>Barbershops &amp; salons</h3>
+        <p>Stylist profiles, online booking front and center, content that shows the work. Reels and Meta ads that fill chairs on slow days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= APPROACH (Pricing) ============= -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="pill"><span class="dot"></span>HOW WE PRICE</span>
+      <h2>Scoped to fit your business.</h2>
+      <p class="lede" style="margin-top:1.5rem;">
+        Every engagement is custom-scoped on a discovery call. You pay a flat monthly rate
+        for what actually moves the needle — bundled or à la carte — with the flexibility
+        to add, drop, or pause pillars as your business changes.
+      </p>
+    </div>
+
+    <div class="pricing-wrap fade-up">
+      <div>
+        <h3>What you can expect from working with us.</h3>
+        <p>Flat monthly billing. No surprise invoices. No long-term lock-in.</p>
+        <ul class="pricing-promises">
+          <li>Custom monthly scope agreed in writing before we start</li>
+          <li>Predictable flat monthly rate — no overages, no surprises</li>
+          <li>Clear revision rounds at every stage</li>
+          <li>Bundled discount when you take multiple pillars</li>
+          <li>Add, drop, or pause pillars month to month</li>
+          <li>You own every asset we create for you</li>
+        </ul>
+      </div>
+      <div class="pricing-cta">
+        <div class="label">CUSTOM QUOTE</div>
+        <h4>Monthly pricing depends on scope, platform, and which pillars you want active.</h4>
+        <p>A 30-minute discovery call is the fastest way to a real number for your business.</p>
+        <a class="btn btn-primary btn-arrow" href="https://calendar.app.google/RjDqahP2hVmo7f5r6" target="_blank" rel="noopener">Get a custom quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= ABOUT ============= -->
+<section id="about" class="section-alt">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="pill"><span class="dot"></span>WHO'S BEHIND IT</span>
+      <h2>A small agency, not a guy with a laptop.</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-avatar-wrap fade-up">
+        <div class="about-avatar" aria-hidden="true">a</div>
+      </div>
+      <div class="about-content fade-up">
+        <p>ace signal media is founded and led by <strong>Alan Vaghedi</strong>.
+          We work with a small bench of vetted specialists — designers, ad managers,
+          SEO and AI-search engineers — so every project gets the right person on the right
+          piece. You'll always know who's working on what.</p>
+        <p>We work with one type of business: independent local operators — restaurants,
+          gyms, barbershops, salons, spas, studios, medical offices, eyecare practices,
+          wellness clinics, local retail, and service trades. We know the booking, ordering,
+          and appointment flows, the seasonality, the staff dynamics, the ad platforms
+          (Meta, Google), and where customers are actually looking for you today (Google,
+          Google Maps, ChatGPT, Perplexity, AI Overviews). That focus is why our projects
+          ship in months instead of years.</p>
+        <p>Every engagement runs on a written contract with a flat monthly rate, scoped
+          to whichever pillars you want active. No long-term lock-in, no platform lock-in,
+          and you own every asset we create for you. Scale up, scale down, or pause as your
+          business changes.</p>
+        <div class="about-signature">— Alan Vaghedi, Founder</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FAQ ============= -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="pill"><span class="dot"></span>QUESTIONS WE HEAR A LOT</span>
+      <h2>Frequently asked.</h2>
+    </div>
+
+    <div class="faq-list stagger">
+      <details class="fade-up">
+        <summary>Why bundle everything instead of just building a website?</summary>
+        <div class="faq-answer">
+          <p>A beautiful website with no SEO doesn't get found. A site with no content looks
+            generic. Ad spend with no funnel underneath leaks money. The four pillars work
+            because they're integrated — that's why we bundle them. If your budget or timeline
+            only allows one piece, we'll scope it à la carte.</p>
+        </div>
+      </details>
+      <details class="fade-up">
+        <summary>What platforms do you build websites on?</summary>
+        <div class="faq-answer">
+          <p>We meet you where you already are. Most projects land on Square, Squarespace, Webflow,
+            WordPress, or Wix. We'll recommend the right platform based on your business, your
+            team's tech comfort, and what your booking, ordering, or contact flow actually needs to do.</p>
+        </div>
+      </details>
+      <details class="fade-up">
+        <summary>Do I own the website and content?</summary>
+        <div class="faq-answer">
+          <p>Yes. Every deliverable we create — website files, photos, video, ad creative,
+            keyword research, performance reports — is yours, perpetually, no strings.
+            That's true whether you stay on with us for one month or one year. We retain
+            the right to feature the work in our portfolio.</p>
+        </div>
+      </details>
+      <details class="fade-up">
+        <summary>What is AI SEO and why should I care?</summary>
+        <div class="faq-answer">
+          <p>People aren't just typing "best gym near me" into Google anymore — they're asking
+            ChatGPT, Perplexity, and Google's AI Overviews for recommendations directly. These
+            answer engines pull from a different set of signals than classic Google rank: schema
+            markup, structured content, citations on review sites, and clean conversational copy
+            on your pages. Most local businesses (and most agencies) aren't optimizing for any of
+            this yet. We bake AI search visibility into every project so you're showing up where
+            the next wave of customers is actually looking.</p>
+        </div>
+      </details>
+      <details class="fade-up">
+        <summary>How are your ads different from what an ad agency would run?</summary>
+        <div class="faq-answer">
+          <p>Most agencies running local ads do three things wrong: weak audience targeting
+            (interest-based "spray and pray" instead of geographic + behavior), recycled creative
+            that doesn't match the business, and zero conversion tracking so they can claim
+            success without proving ROI. We build campaigns around your real customers, use
+            creative from your own content shoot, and install full conversion tracking from day
+            one — so you actually know what's working.</p>
+        </div>
+      </details>
+      <details class="fade-up">
+        <summary>How does monthly billing actually work?</summary>
+        <div class="faq-answer">
+          <p>Flat monthly rate, scoped on a discovery call based on which pillars you want active.
+            That rate covers everything in your agreed scope — no overage invoices, no surprise
+            charges. Most clients start with the full bundle for the first few months to ship the
+            foundational work (website, shoot, SEO, ad setup), then scale to whichever pillars
+            they want ongoing. You can add, drop, or pause pillars month to month, and cancel
+            with 30 days notice. No long-term lock-in.</p>
+        </div>
+      </details>
+      <details class="fade-up">
+        <summary>What if I don't like the website?</summary>
+        <div class="faq-answer">
+          <p>Revision rounds are built into the scope at each major milestone. We approve the
+            design direction before we build, and the build before we go live. You won't be
+            surprised. Unlimited "change everything" rounds aren't included — that's how projects
+            die — but the planned rounds are more than enough when we get the brief right.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============= CLOSING CTA ============= -->
+<section id="contact" class="cta-section">
+  <div class="container">
+    <span class="pill fade-up"><span class="dot"></span>NEXT STEP</span>
+    <h2 class="fade-up">Let's see if we're a <span class="accent">fit.</span></h2>
+    <p class="lede fade-up">
+      30-minute discovery call. No pitch, no hard sell — just a conversation about your business,
+      your goals, and whether we're the right team to help you ship.
+    </p>
+    <a class="btn btn-primary btn-arrow fade-up" href="https://calendar.app.google/RjDqahP2hVmo7f5r6" target="_blank" rel="noopener">Book a free 30-min call</a>
+    <div class="cta-meta fade-up">
+      Or email <a href="mailto:ace@acecoaching.co">ace@acecoaching.co</a> directly.
+    </div>
+  </div>
+</section>
+
+<!-- ============= FOOTER ============= -->
+<footer class="footer">
+  <div class="footer-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">a</span>
+      <span>ace signal media</span>
+    </a>
+    <div class="footer-links">
+      <a href="#services">services</a>
+      <a href="#process">process</a>
+      <a href="#work">work</a>
+      <a href="#about">about</a>
+      <a href="mailto:ace@acecoaching.co">contact</a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    © <span id="year"></span> ace signal media · Alan Vaghedi
+  </div>
+</footer>
+
+<script>
+  // Auto-update year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Nav background gets denser as you scroll
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 8) {
+      nav.style.background = 'rgba(5,5,7,0.88)';
+    } else {
+      nav.style.background = 'rgba(5,5,7,0.72)';
+    }
+  }, { passive: true });
+
+  // Scroll reveal — IntersectionObserver fades elements in as they enter the viewport
+  const reveal = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        reveal.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => reveal.observe(el));
+  document.querySelectorAll('.stagger').forEach(el => reveal.observe(el));
+
+  // Service cards — radial glow follows the cursor
+  document.querySelectorAll('.service').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mx', x + '%');
+      card.style.setProperty('--my', y + '%');
+    });
+  });
+</script>
+</body>
+</html>
