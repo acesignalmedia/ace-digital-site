@@ -15,7 +15,9 @@
 <meta name="ICBM" content="39.877, -105.13" />
 
 <!-- Favicons -->
+<link rel="shortcut icon" href="/favicon.ico" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -1458,39 +1460,49 @@
 <!-- ============= BOOK A CALL (embedded scheduler) ============= -->
 <section id="book-a-call" class="section-alt">
   <style>
-    .booking-wrap { max-width: 920px; margin: 0 auto; }
-    .booking-iframe {
-      width: 100%;
-      min-height: 720px;
-      border: 0;
-      border-radius: 18px;
-      background: #ffffff;
-      display: block;
-      box-shadow: 0 30px 70px -30px rgba(0,0,0,0.75);
-    }
-    .booking-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-      background: linear-gradient(135deg, var(--bg-1), #0C0C10 60%, #0B0E0B);
+    .booking-wrap { max-width: 860px; margin: 0 auto; }
+    .booking-panel {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
       border: 1px solid var(--border-2);
-      border-radius: 20px;
-      padding: 2.75rem;
+      background: var(--bg-1);
+      box-shadow: 0 45px 100px -45px rgba(0,0,0,0.9);
     }
-    .booking-card .label {
-      font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
-      color: var(--accent); font-weight: 700; display: block; margin-bottom: .9rem;
+    .booking-panel::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-warm));
+      z-index: 3;
     }
-    .booking-card h3 { margin: 0 0 .6rem; }
-    .booking-card p { color: var(--text-muted); margin: 0; max-width: 44ch; }
-    .booking-card .btn-primary { font-size: 1.05rem; padding: 1.15rem 2rem; flex-shrink: 0; }
-    .booking-fallback { text-align: center; margin: 1.5rem 0 0; color: var(--text-dim); font-size: .92rem; }
+    .booking-glow {
+      position: absolute; inset: 0; border-radius: 22px; pointer-events: none; z-index: 1;
+      box-shadow: inset 0 0 0 1px rgba(125,211,252,0.10), inset 0 0 60px -12px rgba(125,211,252,0.16);
+    }
+    .booking-panel-head {
+      display: flex; align-items: center; gap: .7rem;
+      padding: 1.15rem 1.6rem;
+      background: var(--bg-2);
+      border-bottom: 1px solid var(--border);
+      font-weight: 600; font-size: .98rem; color: var(--text); letter-spacing: -0.01em;
+      position: relative; z-index: 2;
+    }
+    .booking-panel-head .bdot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+      box-shadow: 0 0 10px rgba(125,211,252,0.6); flex: none;
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+    .booking-panel-head .bmeta { margin-left: auto; color: var(--text-dim); font-weight: 500; font-size: .82rem; }
+    .booking-panel-body { background: #ffffff; padding: 10px; position: relative; z-index: 2; }
+    .booking-iframe {
+      width: 100%; min-height: 700px; border: 0; display: block;
+      background: #ffffff; border-radius: 12px;
+    }
+    .booking-fallback { text-align: center; margin: 1.4rem 0 0; color: var(--text-dim); font-size: .9rem; }
     .booking-fallback a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
     @media (max-width: 640px) {
-      .booking-card { padding: 2rem; }
-      .booking-card .btn-primary { width: 100%; justify-content: center; }
+      .booking-panel-head { font-size: .9rem; padding: 1rem 1.1rem; }
+      .booking-panel-head .bmeta { display: none; }
     }
   </style>
   <div class="container">
@@ -1504,19 +1516,20 @@
     </div>
 
     <div class="booking-wrap fade-up">
-      <!-- ========================================================================
-           INLINE GOOGLE CALENDAR EMBED
-           To turn this into a live in-page scheduler:
-             1) In Google Calendar, open your discovery-call appointment schedule.
-             2) Click Share, then the "</> " embed option, and copy the iframe URL
-                (it ends in ?gv=true).
-             3) Uncomment the <iframe> below and paste that URL into src,
-                then delete the .booking-card block beneath it.
-      ======================================================================== -->
-      <iframe class="booking-iframe"
-        title="Book a free discovery call with ace signal media"
-        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2foVPGVaL3T_F1uWAGOhktJmfEwP3Bjq2W7vYCxva1qUCS1t0OMHyduY5kCN-lREeLPNi0ms8j?gv=true"
-        width="100%" height="720" frameborder="0" loading="lazy"></iframe>
+      <div class="booking-panel">
+        <div class="booking-glow"></div>
+        <div class="booking-panel-head">
+          <span class="bdot"></span>
+          <span>Select a time for your free discovery call</span>
+          <span class="bmeta">30 min · video or phone</span>
+        </div>
+        <div class="booking-panel-body">
+          <iframe class="booking-iframe"
+            title="Book a free discovery call with ace signal media"
+            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2foVPGVaL3T_F1uWAGOhktJmfEwP3Bjq2W7vYCxva1qUCS1t0OMHyduY5kCN-lREeLPNi0ms8j?gv=true"
+            width="100%" height="700" frameborder="0" loading="lazy"></iframe>
+        </div>
+      </div>
       <p class="booking-fallback">Trouble seeing the calendar? <a href="https://calendar.app.google/RjDqahP2hVmo7f5r6" target="_blank" rel="noopener">Open the booking page in a new tab →</a></p>
     </div>
   </div>
